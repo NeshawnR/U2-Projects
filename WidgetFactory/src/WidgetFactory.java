@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class WidgetFactory {
 
     /*
@@ -28,4 +30,25 @@ public class WidgetFactory {
      Profit: $760.00
 
      */
+
+    public static void main(String[] args){
+
+        double widgets = Double.parseDouble(JOptionPane.showInputDialog("How many Widgets are you buying?"));
+        Days(widgets);
+        widgetCost(widgets);
+    }
+
+    public static void Days(double widgets){
+
+        double hours = (24 - 8);
+        double days = (widgets / 10)/ hours;
+
+        JOptionPane.showMessageDialog(null, "It took" + days + "days to make" + widgets + "widgets");
+    }
+    public static void widgetCost(double widgets){
+
+        double totalCost = widgets * 10;
+
+        JOptionPane.showMessageDialog(null, "Total cost is " + totalCost);
+    }
 }
